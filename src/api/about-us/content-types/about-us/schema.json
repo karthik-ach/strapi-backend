@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "about.banner",
+      "repeatable": false
+    },
+    "team": {
+      "type": "component",
+      "component": "about.team",
+      "repeatable": true
+    }
+  }
+}
