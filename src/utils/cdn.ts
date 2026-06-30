@@ -5,8 +5,8 @@
  * (http://localhost:1337/uploads/...) by replacing the origin with CDN_URL.
  * Returns null when given a falsy input.
  */
-export function toCdnUrl(url: string | null | undefined): string | null {
-  if (!url) return null;
+export function toCdnUrl(url: string | null | undefined): string {
+  if (!url) return '';
 
   const cdnBase = process.env.CDN_URL?.replace(/\/$/, '');
   if (!cdnBase) return url;
