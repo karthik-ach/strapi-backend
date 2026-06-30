@@ -3,6 +3,7 @@
  */
 
 import { factories } from '@strapi/strapi';
+import { toCdnUrl } from '../../../utils/cdn';
 
 export default factories.createCoreController('api::about-us.about-us', ({ strapi }) => ({
   async banner(ctx) {
@@ -15,7 +16,7 @@ export default factories.createCoreController('api::about-us.about-us', ({ strap
     ctx.body = {
       data: {
         ...bannerData,
-        image: (image as any[])?.map((img: any) => img?.formats?.small?.url ?? img?.url ?? null) ?? [],
+        image: (image as any[])?.map((img: any) => toCdnUrl(img?.formats?.small?.url ?? img?.url)) ?? [],
       },
     };
   },
@@ -29,7 +30,7 @@ export default factories.createCoreController('api::about-us.about-us', ({ strap
     ctx.body = {
       data: (sanitized?.team ?? []).map(({ id, photo, ...member }) => ({
         ...member,
-        photo: (photo as any)?.formats?.small?.url ?? (photo as any)?.url ?? null,
+        photo: toCdnUrl((photo as any)?.formats?.small?.url ?? (photo as any)?.url),
       })),
     };
   },
