@@ -14,7 +14,7 @@ export function getRedisClient(): Redis {
 }
 
 export async function closeRedisClient(): Promise<void> {
-  if (client) {
+  if (client) { // eslint-disable-line no-lonely-if
     await client.quit();
     client = null;
   }
