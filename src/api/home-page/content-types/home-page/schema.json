@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "home.hero",
+      "repeatable": false
+    },
+    "philosophy": {
+      "type": "component",
+      "component": "home.philosophy",
+      "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "component": "home.cta",
+      "repeatable": false
+    },
+    "workEyebrow": {
+      "type": "string"
+    },
+    "workHeading": {
+      "type": "string"
+    },
+    "teamEyebrowLabel": {
+      "type": "string"
+    },
+    "teamHeadingPrefix": {
+      "type": "string"
+    },
+    "teamHeadingHighlight": {
+      "type": "string"
+    },
+    "teamHeadingSuffix": {
+      "type": "string"
+    }
+  }
+}

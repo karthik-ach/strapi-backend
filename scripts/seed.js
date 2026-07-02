@@ -3,7 +3,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { categories, authors, articles, global, about } = require('../data/data.json');
+const { categories, authors, articles, global, about, homePage, projects, layout } = require('../data/data.json');
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
@@ -104,6 +104,19 @@ async function createEntry({ model, entry }) {
     await strapi.documents(`api::${model}.${model}`).create({
       data: entry,
     });
+  } catch (error) {
+    console.error({ model, entry, error });
+  }
+}
+
+// Create an entry and publish it (for draftAndPublish content-types, where
+// setting `publishedAt` in the create payload does not itself publish it)
+async function createAndPublishEntry({ model, entry }) {
+  try {
+    const created = await strapi.documents(`api::${model}.${model}`).create({
+      data: entry,
+    });
+    await strapi.documents(`api::${model}.${model}`).publish({ documentId: created.documentId });
   } catch (error) {
     console.error({ model, entry, error });
   }
@@ -216,6 +229,29 @@ async function importAbout() {
   });
 }
 
+async function importHomePage() {
+  return createAndPublishEntry({
+    model: 'home-page',
+    entry: homePage,
+  });
+}
+
+async function importProjects() {
+  for (const project of projects) {
+    await createAndPublishEntry({
+      model: 'project',
+      entry: project,
+    });
+  }
+}
+
+async function importLayout() {
+  return createAndPublishEntry({
+    model: 'layout',
+    entry: layout,
+  });
+}
+
 async function importCategories() {
   for (const category of categories) {
     await createEntry({ model: 'category', entry: category });
@@ -244,6 +280,9 @@ async function importSeedData() {
     author: ['find', 'findOne'],
     global: ['find', 'findOne'],
     about: ['find', 'findOne'],
+    'home-page': ['find'],
+    project: ['find', 'findOne'],
+    layout: ['find'],
   });
 
   // Create all entries
@@ -252,6 +291,9 @@ async function importSeedData() {
   await importArticles();
   await importGlobal();
   await importAbout();
+  await importHomePage();
+  await importProjects();
+  await importLayout();
 }
 
 async function main() {

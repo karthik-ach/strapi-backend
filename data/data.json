@@ -1,4 +1,52 @@
 {
+  "layout": {
+    "navBrand": "Many Hands",
+    "navLinks": [
+      { "label": "Work", "href": "#work" },
+      { "label": "Team", "href": "#team" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "footerLine1": "Many Hands Studio — Est. 2019",
+    "footerLine2": "© 2026 — All proofs approved"
+  },
+  "homePage": {
+    "hero": {
+      "eyebrowLeft": "Proof — Rev. 04 / 2026",
+      "eyebrowRight": "Studio, est. 2019",
+      "headlinePrefix": "Good work needs",
+      "headlineStrikeText": "a genius",
+      "headlineCircleText": "many hands.",
+      "paragraph": "We're a fourteen-person design studio building brands, products, and the occasional bad idea that turns out great. No solo auteur — just fourteen people who argue about kerning until it's right.",
+      "primaryCtaLabel": "See the work",
+      "primaryCtaHref": "#work",
+      "secondaryCtaLabel": "Meet the studio →",
+      "secondaryCtaHref": "#team"
+    },
+    "philosophy": {
+      "prefixText": "We don't believe in solo genius. We believe in",
+      "highlightText": "fourteen people arguing about kerning",
+      "suffixText": "until it's right."
+    },
+    "cta": {
+      "eyebrow": "Get in touch",
+      "heading": "Got a brief? Good — let's see it.",
+      "email": "hello@manyhands.studio"
+    },
+    "workEyebrow": "Selected work",
+    "workHeading": "Proof it works.",
+    "teamEyebrowLabel": "The hands",
+    "teamHeadingPrefix": "Who",
+    "teamHeadingHighlight": "actually",
+    "teamHeadingSuffix": "does the work."
+  },
+  "projects": [
+    { "code": "01", "client": "Northline Coffee", "name": "Brand identity & packaging", "year": "2025", "href": "#", "order": 1 },
+    { "code": "02", "client": "Fernweg Travel", "name": "Web platform redesign", "year": "2025", "href": "#", "order": 2 },
+    { "code": "03", "client": "Loom & Co.", "name": "Packaging system", "year": "2024", "href": "#", "order": 3 },
+    { "code": "04", "client": "Basil Kitchen", "name": "Identity + menu system", "year": "2024", "href": "#", "order": 4 },
+    { "code": "05", "client": "Harbor Union", "name": "Product design", "year": "2023", "href": "#", "order": 5 },
+    { "code": "06", "client": "Petal Press", "name": "Editorial identity", "year": "2023", "href": "#", "order": 6 }
+  ],
   "global": {
     "siteName": "Strapi Blog",
     "defaultSeo": {

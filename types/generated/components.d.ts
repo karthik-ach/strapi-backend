@@ -28,6 +28,60 @@ export interface AboutTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeCta extends Struct.ComponentSchema {
+  collectionName: 'components_home_ctas';
+  info: {
+    displayName: 'cta';
+  };
+  attributes: {
+    email: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HomeHero extends Struct.ComponentSchema {
+  collectionName: 'components_home_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    eyebrowLeft: Schema.Attribute.String;
+    eyebrowRight: Schema.Attribute.String;
+    headlineCircleText: Schema.Attribute.String;
+    headlinePrefix: Schema.Attribute.String;
+    headlineStrikeText: Schema.Attribute.String;
+    paragraph: Schema.Attribute.Text;
+    primaryCtaHref: Schema.Attribute.String;
+    primaryCtaLabel: Schema.Attribute.String;
+    secondaryCtaHref: Schema.Attribute.String;
+    secondaryCtaLabel: Schema.Attribute.String;
+  };
+}
+
+export interface HomePhilosophy extends Struct.ComponentSchema {
+  collectionName: 'components_home_philosophies';
+  info: {
+    displayName: 'philosophy';
+  };
+  attributes: {
+    highlightText: Schema.Attribute.String;
+    prefixText: Schema.Attribute.String;
+    suffixText: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'link';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -95,6 +149,10 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about.banner': AboutBanner;
       'about.team': AboutTeam;
+      'home.cta': HomeCta;
+      'home.hero': HomeHero;
+      'home.philosophy': HomePhilosophy;
+      'shared.link': SharedLink;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

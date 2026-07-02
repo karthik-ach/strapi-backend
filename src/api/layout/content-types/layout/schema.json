@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "layouts",
+  "info": {
+    "singularName": "layout",
+    "pluralName": "layouts",
+    "displayName": "Layout"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navBrand": {
+      "type": "string"
+    },
+    "navLinks": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "footerLine1": {
+      "type": "string"
+    },
+    "footerLine2": {
+      "type": "string"
+    }
+  }
+}

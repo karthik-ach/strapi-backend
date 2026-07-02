@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_philosophies",
+  "info": {
+    "displayName": "philosophy"
+  },
+  "options": {},
+  "attributes": {
+    "prefixText": {
+      "type": "string"
+    },
+    "highlightText": {
+      "type": "string"
+    },
+    "suffixText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
