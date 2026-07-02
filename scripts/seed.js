@@ -280,9 +280,9 @@ async function importSeedData() {
     author: ['find', 'findOne'],
     global: ['find', 'findOne'],
     about: ['find', 'findOne'],
-    'home-page': ['find'],
+    'home-page': ['hero', 'philosophy', 'cta', 'workHeading', 'teamHeading'],
     project: ['find', 'findOne'],
-    layout: ['find'],
+    layout: ['navbar', 'footer'],
   });
 
   // Create all entries
